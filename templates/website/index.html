@@ -1,0 +1,25 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django</title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+</head>
+<body>
+    <h1>Add todo list</h1>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong>-
+               {% if task.is_completed %} ✅ {% else %} ❌ {% endif %}
+            <p>{{ task.description }}</p>
+        </li>
+    {% empty %}
+        <li>No tasks found. Go to the Admin to add some!</li>
+    {% endfor %}
+</ul> 
+
+</body>
+</html>
