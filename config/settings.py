@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'start',
+    'api',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_FILES=[os.path.join(BASE_DIR,'static')]
+AUTH_USER_MODEL = 'api.User'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}

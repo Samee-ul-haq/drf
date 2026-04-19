@@ -1,0 +1,38 @@
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+  "email": "superuser123@gmail.com",
+  "password": "superuser"
+}
+
+###
+POST http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+  "email": "test@123.com",
+  "password": "12345678"
+}
+
+
+# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NjcwODY4NiwiaWF0IjoxNzc2NjIyMjg2LCJqdGkiOiIwNDAxYzAzNWJkMmQ0YTcyOTQ2YjA2OGExNTdhNmM5YyIsInVzZXJfaWQiOiIzIn0.O8uVeYuZ9RI6yhK_5rRGSOYWSLyQxXJpt6EzbMOe2H8
+###
+POST http://127.0.0.1:8000/create-user/
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test2@123.com",
+  "password": "12345678"
+}
+
+
+
+###
+GET http://127.0.0.1:8000/teams/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NjIyNzQ0LCJpYXQiOjE3NzY2MjI0NDQsImp0aSI6IjgyOWJkZWRiM2NiYTQ4ZjZiNWZkZGFiNjRlZjY5OTkyIiwidXNlcl9pZCI6IjEifQ.41AJQnsi9V-kKo0yeGWEVYtLSJgsoGxpGo39DbUrZII
+###
+
+GET http://127.0.0.1:8000/students/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NjIyNzQ0LCJpYXQiOjE3NzY2MjI0NDQsImp0aSI6IjgyOWJkZWRiM2NiYTQ4ZjZiNWZkZGFiNjRlZjY5OTkyIiwidXNlcl9pZCI6IjEifQ.41AJQnsi9V-kKo0yeGWEVYtLSJgsoGxpGo39DbUrZII
