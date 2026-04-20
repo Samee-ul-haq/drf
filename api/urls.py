@@ -1,10 +1,14 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
+from rest_framework.routers import DefaultRouter
 
-urlpatterns=[
-    path('students/',views.getStudentList.as_view()),
-    path('teams/',views.getTeamList.as_view()),
-    path('students/<int:enrollment_no>',views.getStudentDetail.as_view()),
-    path('create-user/',views.createUserView.as_view()),
-    path('login/',views.loginView.as_view())
+
+router=DefaultRouter()
+router.register(r'students',views.StudentViewSet,basename='student')
+router.register(r'teams',views.TeamViewSet,basename='team')
+
+urlpatterns = [
+    path('create-user/', views.createUserView.as_view()),
+    path('login/', views.loginView.as_view()),
+    path('', include(router.urls)) # This handles /students/ and /teams/ correctly
 ]

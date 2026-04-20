@@ -2,9 +2,10 @@ from django.shortcuts import get_object_or_404
 from api.serializers import studentSerializer,teamSerializer,UserSerializer
 from api.models import Student,Team,User
 from rest_framework.response import Response
-from rest_framework.decorators import APIView
+from rest_framework.views import APIView
 from django.db.models import Max
-from rest_framework import generics,status
+from rest_framework import generics,status,viewsets
+from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly
 from django.contrib.auth import authenticate,get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
@@ -56,3 +57,16 @@ class loginView(APIView):
             {"error": "Invalid credentials"},
             status=status.HTTP_401_UNAUTHORIZED
         )        
+    
+
+# For CRUD operations on Student model
+class StudentViewSet(viewsets.ModelViewSet):
+    permission_classes=[IsAuthenticatedOrReadOnly]
+    queryset=Student.objects.all()
+    serializer_class=studentSerializer
+
+
+class TeamViewSet(viewsets.ModelViewSet):
+    permission_classes=[IsAuthenticatedOrReadOnly]
+    queryset=Team.objects.all()
+    serializer_class=teamSerializer

@@ -1,4 +1,4 @@
-POST http://127.0.0.1:8000/login/
+POST http://127.0.0.1:8001/login/
 Content-Type: application/json
 
 {
@@ -6,8 +6,10 @@ Content-Type: application/json
   "password": "superuser"
 }
 
+### 
+
 ###
-POST http://127.0.0.1:8000/login/
+POST http://127.0.0.1:8001/login/
 Content-Type: application/json
 
 {
@@ -16,9 +18,15 @@ Content-Type: application/json
 }
 
 
-# eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3NjcwODY4NiwiaWF0IjoxNzc2NjIyMjg2LCJqdGkiOiIwNDAxYzAzNWJkMmQ0YTcyOTQ2YjA2OGExNTdhNmM5YyIsInVzZXJfaWQiOiIzIn0.O8uVeYuZ9RI6yhK_5rRGSOYWSLyQxXJpt6EzbMOe2H8
 ###
-POST http://127.0.0.1:8000/create-user/
+POST http://127.0.0.1:8001/api/token/refresh
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3Njc5NDcxOSwiaWF0IjoxNzc2NzA4MzE5LCJqdGkiOiJlOTRkMTlmNzVkMTc0OGY5YWQ4N2Y4YTMzMGY5ZDViMiIsInVzZXJfaWQiOiIzIn0.K06v-oEyRKsg4CUVB7cS4rQqd7LlGifPBeJHYVvjF6g
+
+
+# Refresh ::  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3Njc5NDcxOSwiaWF0IjoxNzc2NzA4MzE5LCJqdGkiOiJlOTRkMTlmNzVkMTc0OGY5YWQ4N2Y4YTMzMGY5ZDViMiIsInVzZXJfaWQiOiIzIn0.K06v-oEyRKsg4CUVB7cS4rQqd7LlGifPBeJHYVvjF6g
+
+###
+POST http://127.0.0.1:8001/create-user/
 Content-Type: application/json
 
 {
@@ -30,9 +38,36 @@ Content-Type: application/json
 
 
 ###
-GET http://127.0.0.1:8000/teams/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NjIyNzQ0LCJpYXQiOjE3NzY2MjI0NDQsImp0aSI6IjgyOWJkZWRiM2NiYTQ4ZjZiNWZkZGFiNjRlZjY5OTkyIiwidXNlcl9pZCI6IjEifQ.41AJQnsi9V-kKo0yeGWEVYtLSJgsoGxpGo39DbUrZII
-###
+GET http://127.0.0.1:8001/teams/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NzA5NzI4LCJpYXQiOjE3NzY3MDk0MjgsImp0aSI6ImEyZDZlZGY4M2ZkNzRmOThhMmFmMzkxMWY1ZDczODAzIiwidXNlcl9pZCI6IjMifQ.vTykYSUhr_pZDc2F4vnr6rXkG1vmZUlzHyaRnH0edaE
 
-GET http://127.0.0.1:8000/students/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NjIyNzQ0LCJpYXQiOjE3NzY2MjI0NDQsImp0aSI6IjgyOWJkZWRiM2NiYTQ4ZjZiNWZkZGFiNjRlZjY5OTkyIiwidXNlcl9pZCI6IjEifQ.41AJQnsi9V-kKo0yeGWEVYtLSJgsoGxpGo39DbUrZII
+###
+GET http://127.0.0.1:8001/students/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NzA4NjE5LCJpYXQiOjE3NzY3MDgzMTksImp0aSI6ImE5NTM2MWY3ZWIzNDRmOGE5YmU1ZGFiNWZiNzJkZTM3IiwidXNlcl9pZCI6IjMifQ.WK_tD17yKiLxa9cY1uuMsp2GoESQMt3N4BbR5SdMRuA
+
+###
+DELETE http://127.0.0.1:8001/students/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NzA4NjE5LCJpYXQiOjE3NzY3MDgzMTksImp0aSI6ImE5NTM2MWY3ZWIzNDRmOGE5YmU1ZGFiNWZiNzJkZTM3IiwidXNlcl9pZCI6IjMifQ.WK_tD17yKiLxa9cY1uuMsp2GoESQMt3N4BbR5SdMRuA
+
+
+###
+POST  http://127.0.0.1:8001/students/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NzA5NzI4LCJpYXQiOjE3NzY3MDk0MjgsImp0aSI6ImEyZDZlZGY4M2ZkNzRmOThhMmFmMzkxMWY1ZDczODAzIiwidXNlcl9pZCI6IjMifQ.vTykYSUhr_pZDc2F4vnr6rXkG1vmZUlzHyaRnH0edaE
+Content-Type: application/json
+
+{
+  "enrollment_no": 1,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "age": 25,
+  "team": "ab3e7500-7b5b-4add-8acc-01bed6624d89"
+}
+
+###
+POST  http://127.0.0.1:8001/team/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2NzA5NzI4LCJpYXQiOjE3NzY3MDk0MjgsImp0aSI6ImEyZDZlZGY4M2ZkNzRmOThhMmFmMzkxMWY1ZDczODAzIiwidXNlcl9pZCI6IjMifQ.vTykYSUhr_pZDc2F4vnr6rXkG1vmZUlzHyaRnH0edaE
+Content-Type: application/json
+
+{
+  "team_name": "Team A",
+}

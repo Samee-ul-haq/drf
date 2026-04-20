@@ -5,12 +5,12 @@ class studentSerializer(serializers.ModelSerializer):
     team_name=serializers.CharField(source='team.team_name',read_only=True)
     class Meta:
         model=Student
-        fields=(
-            'enrollment_no',
-            'name',
-            'age',
-            'team_name',
-        )
+        fields='__all__'
+        
+    def validate_age(self,value):
+        if value<18:
+            raise serializers.ValidationError("Age must be at least 18")
+        return value
 
 class teamSerializer(serializers.ModelSerializer):
     class Meta:
